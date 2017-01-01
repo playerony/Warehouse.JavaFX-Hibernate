@@ -33,7 +33,7 @@ public class AlertBox {
         initWindow(window, new Scene(layout), title);
     }
     
-    private void initWindow(Stage window, Scene scene, String title){
+    private void initWindow(Stage window, final Scene scene, final String title){
         window.initModality(Modality.APPLICATION_MODAL);
         window.setTitle(title);
         window.setMinWidth(250);
