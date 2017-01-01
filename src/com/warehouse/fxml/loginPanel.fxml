@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" alignment="CENTER" prefHeight="220.9998779296875"
+      prefWidth="315.0000999999975" style="-fx-background-color: #383838;&#10;-fx-font-size: 15px;"
+      xmlns="http://javafx.com/javafx/2.2" fx:controller="com.warehouse.controller.LoginPanelController">
+  <Label opacity="0.84" text="Login Panel" textAlignment="CENTER" textFill="#ab4642" textOverrun="LEADING_ELLIPSIS"
+         underline="false" wrapText="false" VBox.vgrow="ALWAYS">
+    <font>
+      <Font name="Arial Bold" size="36.0" />
+    </font>
+    <VBox.margin>
+      <Insets bottom="20.0" />
+    </VBox.margin>
+  </Label>
+  <TextField fx:id="login" alignment="CENTER" disable="false" maxWidth="200.0" prefHeight="21.0" prefWidth="200.0"
+             promptText="Login"
+             style="-fx-background-radius: 10 10 10 10;&#10;-fx-background-color: #a9a9a9 , white , white;&#10;-fx-background-insets: 0 -1 -1 -1, 0 0 0 0, 0 -1 3 -1;&#10;-fx-text-fill: black;"
+             text="">
+    <VBox.margin>
+      <Insets bottom="10.0" left="5.0" right="5.0" top="5.0"/>
+    </VBox.margin>
+  </TextField>
+  <TextField fx:id="password" alignment="CENTER" disable="false" maxWidth="200.0" prefHeight="21.0" prefWidth="200.0"
+             promptText="Password"
+             style="-fx-background-radius: 10 10 10 10;&#10;-fx-background-color: #a9a9a9 , white , white;&#10;-fx-background-insets: 0 -1 -1 -1, 0 0 0 0, 0 -1 3 -1;&#10;-fx-text-fill: black;"
+             text="">
+    <VBox.margin>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+    </VBox.margin>
+  </TextField>
+  <Button fx:id="loginButton" blendMode="SRC_OVER" contentDisplay="CENTER" onAction="#handleButtonClick"
+          prefHeight="34.0" prefWidth="87.0"
+          style="-fx-background-radius: 15 15 15 15;&#10;-fx-background-insets: 0 -1 -1 -1, 0 0 0 0, 0 -1 3 -1;&#10;-fx-text-fill: black;&#10;-fx-background-color: #ab4642;"
+          text="Sing in">
+    <VBox.margin>
+      <Insets top="15.0" />
+    </VBox.margin>
+  </Button>
+  <padding>
+    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+  </padding>
+</VBox>
