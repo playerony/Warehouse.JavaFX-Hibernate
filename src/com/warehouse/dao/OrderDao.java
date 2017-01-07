@@ -22,9 +22,9 @@ public class OrderDao {
             Session session = HibernateUtil.createSessionFactory().openSession();
             session.beginTransaction();
 
-            String sql = "from Order o where o.id=:orderId";
+            String sql = " from Order o where o.id=:id";
             Query query = session.createQuery(sql);
-            query.setParameter("orderId", id);
+            query.setParameter("id", id);
             List<Order> list = query.list();
 
             if (list.size() > 0) {
