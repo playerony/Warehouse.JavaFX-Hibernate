@@ -9,20 +9,24 @@ import com.warehouse.dao.OrderDao;
 import com.warehouse.loader.LoadFXML;
 import com.warehouse.utility.AlertBox;
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+import javafx.fxml.Initializable;
 import javafx.scene.control.TextField;
 
 /**
  *
  * @author pawel_000
  */
-public class CheckOrderNumberController {
+public class CheckOrderNumberController implements Initializable{
     public TextField orderField;
 
     private LoadFXML loadFXML;
-    private final AlertBox alertBox;
-    private final OrderDao orderDao;
+    private AlertBox alertBox;
+    private OrderDao orderDao;
 
-    public CheckOrderNumberController() {
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
         alertBox = new AlertBox();
         orderDao = new OrderDao();
     }
