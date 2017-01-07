@@ -33,7 +33,7 @@ public class CheckOrderNumberController implements Initializable{
 
     public void handleButtonClick() throws IOException {
         if(orderDao.checkOrderById(Integer.parseInt(orderField.getText()))){
-            loadFXML = new LoadFXML("loginPanel");
+            loadFXML = new LoadFXML("checkOrder");
         }else
             alertBox.display(getClass().getSimpleName(), "Wrong value");
     }

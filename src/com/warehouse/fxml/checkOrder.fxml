@@ -43,7 +43,7 @@
       </MenuButton>
     </children>
   </VBox>
-  <TableView fx:id="orderTableView" maxHeight="325.0" maxWidth="920.0" minHeight="325.0" minWidth="900.0"
+  <TableView fx:id="tableView" maxHeight="325.0" maxWidth="920.0" minHeight="325.0" minWidth="900.0"
              prefHeight="325.0" prefWidth="920.0">
     <columns>
       <TableColumn prefWidth="75.0" text="Order id" fx:id="orderID"/>
