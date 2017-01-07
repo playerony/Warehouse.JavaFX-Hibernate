@@ -23,6 +23,6 @@ public class LoginPanelController {
         if(userDao.find(login.getText(), password.getText()))
             loadFXML = new LoadFXML("checkOrderNumber");
         else
-            alertBox.display("LoginController", "Wrong login or password");
+            alertBox.display(getClass().getSimpleName(), "Wrong login or password");
     }
 }

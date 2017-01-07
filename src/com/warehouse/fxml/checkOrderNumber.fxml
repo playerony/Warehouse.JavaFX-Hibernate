@@ -8,7 +8,7 @@
 <?import javafx.scene.text.Font?>
 <VBox xmlns:fx="http://javafx.com/fxml/1" alignment="CENTER" prefHeight="600.0" prefWidth="800.0"
       style="-fx-background-color: #383838;&#10;-fx-font-size: 15px;" xmlns="http://javafx.com/javafx/2.2"
-      fx:controller="sample.com.erp.fxmlControllers.CheckOrderNumberController">
+      fx:controller="com.warehouse.controller.CheckOrderNumberController">
   <Label text="Check Order Panel" textAlignment="CENTER" textFill="#ab4642" VBox.vgrow="ALWAYS">
     <font>
       <Font name="Arial Bold" size="36.0"/>
