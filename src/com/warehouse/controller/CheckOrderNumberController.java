@@ -5,6 +5,7 @@
  */
 package com.warehouse.controller;
 
+import com.warehouse.dao.OrderDao;
 import com.warehouse.loader.LoadFXML;
 import com.warehouse.utility.AlertBox;
 import java.io.IOException;
@@ -19,12 +20,17 @@ public class CheckOrderNumberController {
 
     private LoadFXML loadFXML;
     private final AlertBox alertBox;
+    private final OrderDao orderDao;
 
     public CheckOrderNumberController() {
         alertBox = new AlertBox();
+        orderDao = new OrderDao();
     }
 
     public void handleButtonClick() throws IOException {
-        
+        if(orderDao.checkOrderById(Integer.parseInt(orderField.getText()))){
+            loadFXML = new LoadFXML("loginPanel");
+        }else
+            alertBox.display(getClass().getSimpleName(), "Wrong value");
     }
 }
