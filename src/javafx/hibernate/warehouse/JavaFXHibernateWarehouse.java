@@ -5,6 +5,7 @@
  */
 package javafx.hibernate.warehouse;
 
+import com.warehouse.loader.LoadFXML;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -19,12 +20,7 @@ public class JavaFXHibernateWarehouse extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/com/warehouse/fxml/loginPanel.fxml"));
-        
-        Scene scene = new Scene(root);
-        
-        stage.setScene(scene);
-        stage.show();
+        LoadFXML loadFXML = new LoadFXML("loginPanel");
     }
 
     /**
