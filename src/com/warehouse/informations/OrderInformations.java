@@ -5,31 +5,77 @@
  */
 package com.warehouse.informations;
 
-import com.warehouse.entity.Order;
-import com.warehouse.entity.PalleteInfo;
-import java.util.ArrayList;
-
 /**
  *
  * @author pawel_000
  */
 public class OrderInformations {
-    private Order order;
-    private ArrayList<PalleteInfo> palleteInfo;
+    private int orderID;
+    private int amount;
 
-    public Order getOrder() {
-        return order;
+    private String itemName;
+    private String itemCode;
+    private String clientName;
+    private String clientAddress;
+    private String whenOrder;
+
+    public OrderInformations() {
+
     }
 
-    public void setOrder(Order order) {
-        this.order = order;
+    public int getOrderID() {
+        return orderID;
     }
 
-    public ArrayList<PalleteInfo> getPalleteInfo() {
-        return palleteInfo;
+    public void setOrderID(final int orderID) {
+        this.orderID = orderID;
     }
 
-    public void setPalleteInfo(ArrayList<PalleteInfo> palleteInfo) {
-        this.palleteInfo = palleteInfo;
+    public int getAmount() {
+        return amount;
+    }
+
+    public void setAmount(final int amount) {
+        this.amount = amount;
+    }
+
+    public String getItemName() {
+        return itemName;
+    }
+
+    public void setItemName(final String itemName) {
+        this.itemName = itemName;
+    }
+
+    public String getItemCode() {
+        return itemCode;
+    }
+
+    public void setItemCode(final String itemCode) {
+        this.itemCode = itemCode;
+    }
+
+    public String getClientName() {
+        return clientName;
+    }
+
+    public void setClientName(final String clientName) {
+        this.clientName = clientName;
+    }
+
+    public String getClientAddress() {
+        return clientAddress;
+    }
+
+    public void setClientAddress(final String clientAddress) {
+        this.clientAddress = clientAddress;
+    }
+
+    public String getWhenOrder() {
+        return whenOrder;
+    }
+
+    public void setWhenOrder(final String whenOrder) {
+        this.whenOrder = whenOrder;
     }
 }
