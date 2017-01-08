@@ -40,7 +40,7 @@ public class OrderDao {
         return false;
     }
     
-    public List<Order> getOrderById(final int id){
+    public Order getOrderById(final int id){
         try{
             Session session = HibernateUtil.createSessionFactory().openSession();
             session.beginTransaction();
@@ -49,7 +49,7 @@ public class OrderDao {
             Query query = session.createQuery(sql);
             query.setParameter("id", id);
 
-            return query.list();
+            return (Order) query.list().get(0);
         }catch(HibernateException e){
             e.printStackTrace();
         }
