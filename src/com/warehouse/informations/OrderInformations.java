@@ -5,7 +5,7 @@
  */
 package com.warehouse.informations;
 
-import com.warehouse.dao.OrderDao;
+import com.warehouse.entity.Order;
 import com.warehouse.entity.PalleteInfo;
 import java.util.ArrayList;
 
@@ -14,15 +14,15 @@ import java.util.ArrayList;
  * @author pawel_000
  */
 public class OrderInformations {
-    private OrderDao orderDao;
+    private Order order;
     private ArrayList<PalleteInfo> palleteInfo;
 
-    public OrderDao getOrderDao() {
-        return orderDao;
+    public Order getOrder() {
+        return order;
     }
 
-    public void setOrderDao(OrderDao orderDao) {
-        this.orderDao = orderDao;
+    public void setOrderDao(Order order) {
+        this.order = order;
     }
 
     public ArrayList<PalleteInfo> getPalleteInfo() {
