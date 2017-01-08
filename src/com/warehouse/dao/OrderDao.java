@@ -39,4 +39,21 @@ public class OrderDao {
         
         return false;
     }
+    
+    public List<Order> getOrderById(final int id){
+        try{
+            Session session = HibernateUtil.createSessionFactory().openSession();
+            session.beginTransaction();
+
+            String sql = " from Order o where o.id=:id";
+            Query query = session.createQuery(sql);
+            query.setParameter("id", id);
+
+            return query.list();
+        }catch(HibernateException e){
+            e.printStackTrace();
+        }
+        
+        return null;
+    }
 }

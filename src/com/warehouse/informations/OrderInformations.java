@@ -21,7 +21,7 @@ public class OrderInformations {
         return order;
     }
 
-    public void setOrderDao(Order order) {
+    public void setOrder(Order order) {
         this.order = order;
     }
 
