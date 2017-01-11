@@ -9,14 +9,9 @@ package com.warehouse.informations;
  *
  * @author pawel_000
  */
-public class PackingInformations {
-    private int id;
-    private int amount;
-
+public class PackingInformations extends AbstractInformation{
     private String workerLogin;
     private String itemCode;
-    private String clientName;
-    private String clientAddress;
     private String whenOrder;
     private String type;
 
@@ -36,44 +31,12 @@ public class PackingInformations {
         this.itemCode = itemCode;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public int getAmount() {
-        return amount;
-    }
-
-    public void setAmount(int amount) {
-        this.amount = amount;
-    }
-
     public String getWorkerLogin() {
         return workerLogin;
     }
 
     public void setWorkerLogin(String workerLogin) {
         this.workerLogin = workerLogin;
-    }
-
-    public String getClientName() {
-        return clientName;
-    }
-
-    public void setClientName(String clientName) {
-        this.clientName = clientName;
-    }
-
-    public String getClientAddress() {
-        return clientAddress;
-    }
-
-    public void setClientAddress(String clientAddress) {
-        this.clientAddress = clientAddress;
     }
 
     public String getWhenOrder() {
