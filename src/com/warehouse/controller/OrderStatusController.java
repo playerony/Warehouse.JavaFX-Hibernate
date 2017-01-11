@@ -125,11 +125,11 @@ public class OrderStatusController extends OrderMenuAbstractController implement
     
     public void handlePackingOrderAction() throws IOException {
         Stage stage = (Stage) tableView.getScene().getWindow();
-        stage.setScene(new Scene(FXMLLoader.load(loadFXML.getPath("loginPanel"))));
+        stage.setScene(new Scene(FXMLLoader.load(loadFXML.getPath("packingMenu"))));
     }
     
     public void handlePickingOrderAction() throws IOException {
         Stage stage = (Stage) tableView.getScene().getWindow();
-        stage.setScene(new Scene(FXMLLoader.load(loadFXML.getPath("loginPanel"))));
+        stage.setScene(new Scene(FXMLLoader.load(loadFXML.getPath("pickingMenu"))));
     }
 }
