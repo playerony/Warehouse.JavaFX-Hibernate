@@ -12,8 +12,6 @@ import com.warehouse.dao.OrderDao;
 import com.warehouse.entity.Order;
 import com.warehouse.entity.PalleteInfo;
 import com.warehouse.informations.OrderInformations;
-import com.warehouse.loader.LoadFXML;
-import com.warehouse.utility.AlertBox;
 import com.warehouse.utility.Validate;
 import java.io.IOException;
 import java.net.URL;
@@ -52,8 +50,6 @@ public class OrderStatusController extends OrderMenuAbstractController implement
     @FXML
     public TableColumn<OrderInformations, String> whenOrder;
     
-    private AlertBox alertBox;
-    private LoadFXML loadFXML;
     private ItemDao itemDao;
     private OrderDao orderDao;
     
@@ -64,8 +60,6 @@ public class OrderStatusController extends OrderMenuAbstractController implement
     }
     
     private void initInstances() {
-        alertBox = new AlertBox();
-        loadFXML = new LoadFXML();
         itemDao = new ItemDao();
         orderDao = new OrderDao();
     }
