@@ -12,6 +12,7 @@ import com.warehouse.dao.OrderDao;
 import com.warehouse.entity.Order;
 import com.warehouse.entity.PalleteInfo;
 import com.warehouse.informations.OrderInformations;
+import com.warehouse.loader.LoadFXML;
 import com.warehouse.utility.Validate;
 import java.io.IOException;
 import java.net.URL;
@@ -104,6 +105,22 @@ public class OrderStatusController extends OrderMenuAbstractController implement
         }
 
         return result;
+    }
+    
+    public void handleBackMenuItem() throws IOException {
+        Stage stage = (Stage) tableView.getScene().getWindow();
+        stage.close();
+        Cookie.clear();
+
+        LoadFXML load = new LoadFXML("checkOrderNumber");
+    }
+
+    public void handleLogoutMenuItem() throws IOException {
+        Stage stage = (Stage) tableView.getScene().getWindow();
+        stage.close();
+        Cookie.clear();
+
+        LoadFXML load = new LoadFXML("loginPanel");
     }
     
     public void handlePackingOrderAction() throws IOException {

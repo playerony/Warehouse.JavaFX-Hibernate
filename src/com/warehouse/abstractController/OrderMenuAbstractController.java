@@ -8,6 +8,7 @@ package com.warehouse.abstractController;
 import com.warehouse.loader.LoadFXML;
 import com.warehouse.utility.AlertBox;
 import java.io.IOException;
+import javafx.stage.Stage;
 
 /**
  *
@@ -27,13 +28,5 @@ public class OrderMenuAbstractController{
 
     public void handleInformationAction() {
         alertBox.display("About", "It's a simple version of the ERP system written by the playerony(Paweł Wojtasiński)");
-    }
-
-    public void handleBackMenuItem() throws IOException {
-        
-    }
-
-    public void handleLogoutMenuItem() throws IOException {
-        
     }
 }
