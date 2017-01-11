@@ -80,9 +80,7 @@ public class OrderStatusController extends OrderMenuAbstractController implement
         ObservableList<OrderInformations> result = FXCollections.observableArrayList();
 
         try {
-            Cookie cookie = new Cookie();
-            System.out.println(cookie.getCookieUsingCookieHandler("orderID"));
-            Order order = orderDao.getOrderById(1);
+            Order order = orderDao.getOrderById(Integer.parseInt(Cookie.get("orderID")));
             List<PalleteInfo>palleteInfo = Validate.getPalleteInformations(order.getItems());
             
             if (order != null) {

@@ -5,10 +5,12 @@
  */
 package com.warehouse.controller;
 
+import com.warehouse.cookie.Cookie;
 import com.warehouse.dao.OrderDao;
 import com.warehouse.loader.LoadFXML;
 import com.warehouse.utility.AlertBox;
 import java.io.IOException;
+import java.net.CookieManager;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.Initializable;
@@ -33,6 +35,7 @@ public class CheckOrderNumberController implements Initializable{
 
     public void handleButtonClick() throws IOException {
         if(orderDao.checkOrderById(Integer.parseInt(orderField.getText()))){
+            Cookie.add("orderID", orderField.getText());
             loadFXML = new LoadFXML("checkOrder");
         }else
             alertBox.display(getClass().getSimpleName(), "Wrong value");
