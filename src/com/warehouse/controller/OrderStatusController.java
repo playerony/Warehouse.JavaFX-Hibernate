@@ -12,6 +12,7 @@ import com.warehouse.dao.OrderDao;
 import com.warehouse.entity.Order;
 import com.warehouse.entity.PalleteInfo;
 import com.warehouse.informations.OrderInformations;
+import com.warehouse.loader.LoadFXML;
 import com.warehouse.utility.AlertBox;
 import com.warehouse.utility.Validate;
 import java.io.IOException;
@@ -21,10 +22,13 @@ import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
 /**
  *
@@ -49,6 +53,7 @@ public class OrderStatusController extends OrderMenuAbstractController implement
     public TableColumn<OrderInformations, String> whenOrder;
     
     private AlertBox alertBox;
+    private LoadFXML loadFXML;
     private ItemDao itemDao;
     private OrderDao orderDao;
     
@@ -60,6 +65,7 @@ public class OrderStatusController extends OrderMenuAbstractController implement
     
     private void initInstances() {
         alertBox = new AlertBox();
+        loadFXML = new LoadFXML();
         itemDao = new ItemDao();
         orderDao = new OrderDao();
     }
@@ -107,10 +113,12 @@ public class OrderStatusController extends OrderMenuAbstractController implement
     }
     
     public void handlePackingOrderAction() throws IOException {
-        
+        Stage stage = (Stage) tableView.getScene().getWindow();
+        stage.setScene(new Scene(FXMLLoader.load(loadFXML.getPath("loginPanel"))));
     }
     
     public void handlePickingOrderAction() throws IOException {
-        
+        Stage stage = (Stage) tableView.getScene().getWindow();
+        stage.setScene(new Scene(FXMLLoader.load(loadFXML.getPath("loginPanel"))));
     }
 }
