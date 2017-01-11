@@ -38,12 +38,12 @@
       <MenuButton mnemonicParsing="false" prefHeight="23.999908447265625" text="Mode">
         <items>
           <MenuItem mnemonicParsing="false" onAction="#handleShowOrderAction" text="Show order"/>
-          <MenuItem mnemonicParsing="false" onAction="#handleShowPickingAction" text="Show order"/>
+          <MenuItem mnemonicParsing="false" onAction="#handleShowPickingAction" text="Show picking"/>
         </items>
       </MenuButton>
     </children>
   </VBox>
-  <TableView fx:id="orderTableView" maxHeight="325.0" maxWidth="920.0" minHeight="325.0" minWidth="900.0"
+  <TableView fx:id="tableView" maxHeight="325.0" maxWidth="920.0" minHeight="325.0" minWidth="900.0"
              prefHeight="325.0" prefWidth="920.0">
     <columns>
       <TableColumn maxWidth="5000.0" minWidth="50.0" prefWidth="25.0" text="ID" fx:id="id"/>
