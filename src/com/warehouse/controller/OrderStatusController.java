@@ -6,6 +6,8 @@
 package com.warehouse.controller;
 
 import com.warehouse.abstractController.OrderMenuAbstractController;
+import com.warehouse.cookie.Cookie;
+import com.warehouse.dao.ItemDao;
 import com.warehouse.dao.OrderDao;
 import com.warehouse.entity.Order;
 import com.warehouse.entity.PalleteInfo;
@@ -47,6 +49,7 @@ public class OrderStatusController extends OrderMenuAbstractController implement
     public TableColumn<OrderInformations, String> whenOrder;
     
     private AlertBox alertBox;
+    private ItemDao itemDao;
     private OrderDao orderDao;
     
     @Override
@@ -57,6 +60,7 @@ public class OrderStatusController extends OrderMenuAbstractController implement
     
     private void initInstances() {
         alertBox = new AlertBox();
+        itemDao = new ItemDao();
         orderDao = new OrderDao();
     }
     
@@ -76,6 +80,8 @@ public class OrderStatusController extends OrderMenuAbstractController implement
         ObservableList<OrderInformations> result = FXCollections.observableArrayList();
 
         try {
+            Cookie cookie = new Cookie();
+            System.out.println(cookie.getCookieUsingCookieHandler("orderID"));
             Order order = orderDao.getOrderById(1);
             List<PalleteInfo>palleteInfo = Validate.getPalleteInformations(order.getItems());
             
@@ -85,8 +91,8 @@ public class OrderStatusController extends OrderMenuAbstractController implement
                     cm.setOrderID(order.getId());
                     cm.setClientName(order.getClient().getName());
                     cm.setClientAddress(order.getClient().getAddress());
-                    cm.setItemName("xDDD");
-                    cm.setItemCode("000");
+                    cm.setItemName(itemDao.getItemById(p.getId()).getName());
+                    cm.setItemCode(itemDao.getItemById(p.getId()).getCode());
                     cm.setAmount(p.getAmount());
                     cm.setWhenOrder(order.getDate().toString());
 
