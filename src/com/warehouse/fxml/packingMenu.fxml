@@ -4,7 +4,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.VBox?>
 <VBox xmlns:fx="http://javafx.com/fxml/1" alignment="CENTER" prefHeight="600.0" prefWidth="800.0"
-      xmlns="http://javafx.com/javafx/2.2" fx:controller="sample.com.erp.fxmlControllers.PackingMenuController">
+      xmlns="http://javafx.com/javafx/2.2" fx:controller="com.warehouse.controller.PackingMenuController">
   <padding>
     <Insets/>
   </padding>
