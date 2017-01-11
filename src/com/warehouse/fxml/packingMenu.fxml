@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.VBox?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" alignment="CENTER" prefHeight="600.0" prefWidth="800.0"
+      xmlns="http://javafx.com/javafx/2.2" fx:controller="sample.com.erp.fxmlControllers.PackingMenuController">
+  <padding>
+    <Insets/>
+  </padding>
+  <VBox minHeight="275.0" prefHeight="200.0" prefWidth="200.0">
+    <children>
+      <MenuBar>
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#handleBackMenuItem" text="Back"/>
+              <MenuItem mnemonicParsing="false" onAction="#handleLogoutMenuItem" text="Logout"/>
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <Menu mnemonicParsing="false" text="Print">
+                <items>
+                  <MenuItem mnemonicParsing="false" onAction="#handleGenerateTXT" text="Generate"/>
+                  <MenuItem mnemonicParsing="false" onAction="#handleGeneratePDF" text="Generate PDF file"/>
+                </items>
+              </Menu>
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#handleInformationAction" text="About"/>
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <MenuButton mnemonicParsing="false" prefHeight="23.999908447265625" text="Mode">
+        <items>
+          <MenuItem mnemonicParsing="false" onAction="#handleShowOrderAction" text="Show order"/>
+          <MenuItem mnemonicParsing="false" onAction="#handleShowPickingAction" text="Show order"/>
+        </items>
+      </MenuButton>
+    </children>
+  </VBox>
+  <TableView fx:id="orderTableView" maxHeight="325.0" maxWidth="920.0" minHeight="325.0" minWidth="900.0"
+             prefHeight="325.0" prefWidth="920.0">
+    <columns>
+      <TableColumn maxWidth="5000.0" minWidth="50.0" prefWidth="25.0" text="ID" fx:id="id"/>
+      <TableColumn minWidth="100.0" prefWidth="100.0" text="Worker Login" fx:id="workerLogin"/>
+      <TableColumn minWidth="125.0" prefWidth="100.0" text="Item Code" fx:id="itemCode"/>
+      <TableColumn minWidth="75.0" prefWidth="50.0" text="Amount" fx:id="itemAmount"/>
+      <TableColumn minWidth="150.0" prefWidth="100.0" text="Client Name" fx:id="clientName"/>
+      <TableColumn minWidth="150.0" prefWidth="150.0" text="Client Address" fx:id="clientAddress"/>
+      <TableColumn maxWidth="125.0" minWidth="174.0" prefWidth="120.0" text="When Order" fx:id="whenOrder"/>
+      <TableColumn maxWidth="73.0" minWidth="74.0" prefWidth="65.0" text="Type" fx:id="type"/>
+    </columns>
+  </TableView>
+</VBox>
