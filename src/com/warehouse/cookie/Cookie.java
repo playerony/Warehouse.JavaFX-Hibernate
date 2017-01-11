@@ -30,7 +30,7 @@ public class Cookie {
         memory.remove(value);
     }
     
-    public static void clear(final String value){
+    public static void clear(){
         memory.clear();
     }
 }
