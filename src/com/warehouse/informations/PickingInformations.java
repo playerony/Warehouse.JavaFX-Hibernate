@@ -9,30 +9,9 @@ package com.warehouse.informations;
  *
  * @author pawel_000
  */
-public class PickingInformations {
-    private int id;
-    private int amount;
-
+public class PickingInformations extends AbstractInformation{
     private String workerLogin;
     private String itemCode;
-    private String clientName;
-    private String clientAddress;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public int getAmount() {
-        return amount;
-    }
-
-    public void setAmount(int amount) {
-        this.amount = amount;
-    }
 
     public String getWorkerLogin() {
         return workerLogin;
@@ -48,21 +27,5 @@ public class PickingInformations {
 
     public void setItemCode(String itemCode) {
         this.itemCode = itemCode;
-    }
-
-    public String getClientName() {
-        return clientName;
-    }
-
-    public void setClientName(String clientName) {
-        this.clientName = clientName;
-    }
-
-    public String getClientAddress() {
-        return clientAddress;
-    }
-
-    public void setClientAddress(String clientAddress) {
-        this.clientAddress = clientAddress;
     }
 }
