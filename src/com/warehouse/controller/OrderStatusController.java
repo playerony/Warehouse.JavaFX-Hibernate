@@ -66,7 +66,7 @@ public class OrderStatusController extends OrderMenuAbstractController implement
     }
     
     private void initTableView() {
-        orderID.setCellValueFactory(new PropertyValueFactory<>("orderID"));
+        orderID.setCellValueFactory(new PropertyValueFactory<>("id"));
         itemName.setCellValueFactory(new PropertyValueFactory<>("itemName"));
         itemCode.setCellValueFactory(new PropertyValueFactory<>("itemCode"));
         amount.setCellValueFactory(new PropertyValueFactory<>("amount"));
@@ -87,7 +87,7 @@ public class OrderStatusController extends OrderMenuAbstractController implement
             if (order != null) {
                 for (PalleteInfo p : palleteInfo) {
                     OrderInformations cm = new OrderInformations();
-                    cm.setOrderID(order.getId());
+                    cm.setId(order.getId());
                     cm.setClientName(order.getClient().getName());
                     cm.setClientAddress(order.getClient().getAddress());
                     cm.setItemName(itemDao.getItemById(p.getId()).getName());
