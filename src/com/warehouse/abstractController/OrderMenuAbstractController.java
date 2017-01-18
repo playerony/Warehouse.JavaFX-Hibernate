@@ -5,15 +5,21 @@
  */
 package com.warehouse.abstractController;
 
-import com.warehouse.cookie.Cookie;
 import com.warehouse.dao.OrderDao;
-import com.warehouse.entity.Order;
 import com.warehouse.loader.LoadFXML;
 import com.warehouse.utility.AlertBox;
+import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.PrintWriter;
-import javafx.stage.Stage;
+import com.itextpdf.text.Document;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfWriter;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.OutputStream;
+import java.util.ArrayList;
+import java.util.Date;
 
 /**
  *
@@ -25,7 +31,23 @@ public class OrderMenuAbstractController{
     protected LoadFXML loadFXML = new LoadFXML();
 
     public void handleGeneratePDF() {
-        
+        try {
+            OutputStream file = new FileOutputStream(new File("./Test.pdf"));
+            Document document = new Document();
+            PdfWriter.getInstance(document, file);
+            document.open();
+            
+            document.add(new Paragraph("PDF test"));
+
+            document.add(new Paragraph(new Date().toString()));
+            document.close();
+
+            file.close();
+
+            alertBox.display(getClass().getSimpleName().toString(), "Successful generated *.PDF file !");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void handleInformationAction() {
