@@ -56,4 +56,8 @@ public class OrderDao {
         
         return null;
     }
+    
+    public int getClientID(final int id){
+        return getOrderById(id).getClient().getId();
+    }
 }
