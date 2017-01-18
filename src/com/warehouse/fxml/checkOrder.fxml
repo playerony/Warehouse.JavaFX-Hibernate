@@ -22,7 +22,6 @@
             <items>
               <Menu mnemonicParsing="false" text="Print">
                 <items>
-                  <MenuItem mnemonicParsing="false" onAction="#handleGenerateTXT" text="Generate"/>
                   <MenuItem mnemonicParsing="false" onAction="#handleGeneratePDF" text="Generate PDF file"/>
                 </items>
               </Menu>
