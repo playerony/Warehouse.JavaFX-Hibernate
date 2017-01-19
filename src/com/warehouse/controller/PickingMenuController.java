@@ -7,21 +7,36 @@ package com.warehouse.controller;
 
 import com.warehouse.abstractController.OrderMenuAbstractController;
 import com.warehouse.cookie.Cookie;
+import com.warehouse.dao.ItemDao;
+import com.warehouse.dao.PackingDao;
+import com.warehouse.dao.PickingDao;
+import com.warehouse.entity.PalleteInfo;
+import com.warehouse.entity.PalletsPacked;
+import com.warehouse.entity.PalletsPicked;
+import com.warehouse.informations.PackingInformations;
 import com.warehouse.informations.PickingInformations;
 import com.warehouse.loader.LoadFXML;
+import com.warehouse.utility.Validate;
 import java.io.IOException;
+import java.net.URL;
+import java.util.List;
+import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 /**
  *
  * @author pawel_000
  */
-public class PickingMenuController extends OrderMenuAbstractController{
+public class PickingMenuController extends OrderMenuAbstractController implements Initializable{
     @FXML
     public TableView<PickingInformations> tableView;
     @FXML
@@ -36,6 +51,61 @@ public class PickingMenuController extends OrderMenuAbstractController{
     public TableColumn<PickingInformations, String> clientName;
     @FXML
     public TableColumn<PickingInformations, String> clientAddress;
+    
+    private ItemDao itemDao;
+    private PickingDao pickingDao;
+    
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        initInstances();
+        initTableView();
+    }
+    
+    private void initInstances() {
+        itemDao = new ItemDao();
+        pickingDao = new PickingDao();
+    }
+    
+    private void initTableView() {
+        id.setCellValueFactory(new PropertyValueFactory<>("id"));
+        workerLogin.setCellValueFactory(new PropertyValueFactory<>("workerLogin"));
+        itemCode.setCellValueFactory(new PropertyValueFactory<>("itemCode"));
+        itemAmount.setCellValueFactory(new PropertyValueFactory<>("amount"));
+        clientName.setCellValueFactory(new PropertyValueFactory<>("clientName"));
+        clientAddress.setCellValueFactory(new PropertyValueFactory<>("clientAddress"));
+
+        tableView.setItems(getObservableList());
+    }
+    
+    public ObservableList<PickingInformations> getObservableList() {
+        ObservableList<PickingInformations> result = FXCollections.observableArrayList();
+
+        try {
+            List<PalletsPicked>palletsPicked = pickingDao.getPackedPallets();
+            
+            for (PalletsPicked p : palletsPicked) {
+                List<PalleteInfo>palleteInfo = Validate.getPalleteInformations(p.getProducts());
+                
+                for (PalleteInfo pa : palleteInfo) {
+                    PickingInformations cm = new PickingInformations();
+                    cm.setId(p.getId());
+                    cm.setClientName(p.getClient().getName());
+                    cm.setClientAddress(p.getClient().getAddress());
+                    cm.setItemCode(itemDao.getItemById(p.getId()).getCode());
+                    cm.setAmount(pa.getAmount());
+                    cm.setWorkerLogin(p.getUser().getLogin());
+                    
+                    result.add(cm);
+                }
+            }
+        return result;
+        } catch (Exception e) {
+            alertBox.display(getClass().getSimpleName(), "Cant get informations from DB");
+            e.printStackTrace();
+        }
+
+        return result;
+    }
     
     public void handleBackMenuItem() throws IOException {
         Stage stage = (Stage) tableView.getScene().getWindow();
