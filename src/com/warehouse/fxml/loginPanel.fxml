@@ -18,7 +18,7 @@
       <Insets bottom="20.0" />
     </VBox.margin>
   </Label>
-  <TextField fx:id="login" alignment="CENTER" disable="false" maxWidth="200.0" prefHeight="21.0" prefWidth="200.0"
+  <TextField fx:id="loginField" alignment="CENTER" disable="false" maxWidth="200.0" prefHeight="21.0" prefWidth="200.0"
              promptText="Login"
              style="-fx-background-radius: 10 10 10 10;&#10;-fx-background-color: #a9a9a9 , white , white;&#10;-fx-background-insets: 0 -1 -1 -1, 0 0 0 0, 0 -1 3 -1;&#10;-fx-text-fill: black;"
              text="">
@@ -26,7 +26,7 @@
       <Insets bottom="10.0" left="5.0" right="5.0" top="5.0"/>
     </VBox.margin>
   </TextField>
-  <TextField fx:id="password" alignment="CENTER" disable="false" maxWidth="200.0" prefHeight="21.0" prefWidth="200.0"
+  <TextField fx:id="passwordField" alignment="CENTER" disable="false" maxWidth="200.0" prefHeight="21.0" prefWidth="200.0"
              promptText="Password"
              style="-fx-background-radius: 10 10 10 10;&#10;-fx-background-color: #a9a9a9 , white , white;&#10;-fx-background-insets: 0 -1 -1 -1, 0 0 0 0, 0 -1 3 -1;&#10;-fx-text-fill: black;"
              text="">
