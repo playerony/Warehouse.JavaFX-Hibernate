@@ -22,7 +22,7 @@ public class PackingDao {
             Session session = HibernateUtil.createSessionFactory().openSession();
             session.beginTransaction();
 
-            String sql = " from PalletsPacked p where 1";
+            String sql = " from PalletsPacked p";
             Query query = session.createQuery(sql);
 
             return query.list();
