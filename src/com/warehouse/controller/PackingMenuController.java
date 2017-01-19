@@ -120,7 +120,7 @@ public class PackingMenuController extends OrderMenuAbstractController implement
     public void handleBackMenuItem() throws IOException {
         Stage stage = (Stage) tableView.getScene().getWindow();
         stage.close();
-        Cookie.clear();
+        cookie.clear();
 
         LoadFXML load = new LoadFXML("checkOrderNumber");
     }
@@ -129,7 +129,7 @@ public class PackingMenuController extends OrderMenuAbstractController implement
     public void handleLogoutMenuItem() throws IOException {
         Stage stage = (Stage) tableView.getScene().getWindow();
         stage.close();
-        Cookie.clear();
+        cookie.clear();
 
         LoadFXML load = new LoadFXML("loginPanel");
     }

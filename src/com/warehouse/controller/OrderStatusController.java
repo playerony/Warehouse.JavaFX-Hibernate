@@ -85,7 +85,7 @@ public class OrderStatusController extends OrderMenuAbstractController implement
         ObservableList<OrderInformations> result = FXCollections.observableArrayList();
 
         try {
-            Order order = orderDao.getOrderById(Integer.parseInt(Cookie.get("orderID")));
+            Order order = orderDao.getOrderById(Integer.parseInt(cookie.get("orderID")));
             List<PalleteInfo>palleteInfo = Validate.getPalleteInformations(order.getItems());
             
             if (order != null) {
@@ -115,7 +115,7 @@ public class OrderStatusController extends OrderMenuAbstractController implement
     public void handleBackMenuItem() throws IOException {
         Stage stage = (Stage) tableView.getScene().getWindow();
         stage.close();
-        Cookie.clear();
+        cookie.clear();
 
         LoadFXML load = new LoadFXML("checkOrderNumber");
     }
@@ -124,7 +124,7 @@ public class OrderStatusController extends OrderMenuAbstractController implement
     public void handleLogoutMenuItem() throws IOException {
         Stage stage = (Stage) tableView.getScene().getWindow();
         stage.close();
-        Cookie.clear();
+        cookie.clear();
 
         LoadFXML load = new LoadFXML("loginPanel");
     }

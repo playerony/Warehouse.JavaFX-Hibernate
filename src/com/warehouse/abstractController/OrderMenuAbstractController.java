@@ -9,16 +9,12 @@ import com.warehouse.dao.OrderDao;
 import com.warehouse.loader.LoadFXML;
 import com.warehouse.utility.AlertBox;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.IOException;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfWriter;
-import java.io.BufferedReader;
-import java.io.FileReader;
+import com.warehouse.cookie.Cookie;
 import java.io.OutputStream;
-import java.util.ArrayList;
 import java.util.Date;
 
 /**
@@ -29,6 +25,7 @@ public class OrderMenuAbstractController{
     protected AlertBox alertBox = new AlertBox();
     protected OrderDao orderDao = new OrderDao();
     protected LoadFXML loadFXML = new LoadFXML();
+    protected Cookie cookie = Cookie.getInstance();
 
     public void handleGeneratePDF() {
         try {

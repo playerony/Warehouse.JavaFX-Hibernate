@@ -38,7 +38,8 @@ public class CheckOrderNumberController implements Initializable{
             Stage stage = (Stage) orderField.getScene().getWindow();
             stage.close();
             
-            Cookie.add("orderID", orderField.getText());
+            Cookie cookie = Cookie.getInstance();
+            cookie.add("orderID", orderField.getText());
             loadFXML = new LoadFXML("checkOrder");
         }else
             alertBox.display(getClass().getSimpleName(), "Wrong value");
