@@ -9,10 +9,8 @@ import com.warehouse.abstractController.OrderMenuAbstractController;
 import com.warehouse.cookie.Cookie;
 import com.warehouse.dao.ItemDao;
 import com.warehouse.dao.PackingDao;
-import com.warehouse.dao.UserDao;
 import com.warehouse.entity.PalleteInfo;
 import com.warehouse.entity.PalletsPacked;
-import com.warehouse.informations.OrderInformations;
 import com.warehouse.informations.PackingInformations;
 import com.warehouse.loader.LoadFXML;
 import com.warehouse.utility.Validate;
@@ -56,7 +54,6 @@ public class PackingMenuController extends OrderMenuAbstractController implement
     public TableColumn<PackingInformations, String> whenOrder;
     
     private ItemDao itemDao;
-    private UserDao userDao;
     private PackingDao packingDao;
     
     @Override
@@ -67,7 +64,6 @@ public class PackingMenuController extends OrderMenuAbstractController implement
     
     private void initInstances() {
         itemDao = new ItemDao();
-        userDao = new UserDao();
         packingDao = new PackingDao();
     }
 
