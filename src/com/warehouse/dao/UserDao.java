@@ -39,4 +39,21 @@ public class UserDao {
         
         return false;
     }
+    
+    public String getUserNameById(final int id){
+        try{
+            Session session = HibernateUtil.createSessionFactory().openSession();
+            session.beginTransaction();
+
+            String sql = " from User u where u.id=:id";
+            Query query = session.createQuery(sql);
+            query.setParameter("id", id);
+
+            return query.list().get(0).toString();
+        }catch(HibernateException e){
+            e.printStackTrace();
+        }
+        
+        return null;
+    }
 }
