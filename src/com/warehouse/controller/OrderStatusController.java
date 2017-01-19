@@ -6,6 +6,7 @@
 package com.warehouse.controller;
 
 import com.warehouse.abstractController.OrderMenuAbstractController;
+import com.warehouse.abstractController.OrderMenuInterface;
 import com.warehouse.cookie.Cookie;
 import com.warehouse.dao.ItemDao;
 import com.warehouse.dao.OrderDao;
@@ -33,7 +34,7 @@ import javafx.stage.Stage;
  *
  * @author pawel_000
  */
-public class OrderStatusController extends OrderMenuAbstractController implements Initializable{
+public class OrderStatusController extends OrderMenuAbstractController implements Initializable, OrderMenuInterface{
     @FXML
     public TableView<OrderInformations> tableView;
     @FXML
@@ -60,12 +61,14 @@ public class OrderStatusController extends OrderMenuAbstractController implement
         initTableView();
     }
     
-    private void initInstances() {
+    @Override
+    public void initInstances() {
         itemDao = new ItemDao();
         orderDao = new OrderDao();
     }
     
-    private void initTableView() {
+    @Override
+    public void initTableView() {
         orderID.setCellValueFactory(new PropertyValueFactory<>("id"));
         itemName.setCellValueFactory(new PropertyValueFactory<>("itemName"));
         itemCode.setCellValueFactory(new PropertyValueFactory<>("itemCode"));
@@ -77,6 +80,7 @@ public class OrderStatusController extends OrderMenuAbstractController implement
         tableView.setItems(getObservableList());
     }
     
+    @Override
     public ObservableList<OrderInformations> getObservableList() {
         ObservableList<OrderInformations> result = FXCollections.observableArrayList();
 
@@ -107,6 +111,7 @@ public class OrderStatusController extends OrderMenuAbstractController implement
         return result;
     }
     
+    @Override
     public void handleBackMenuItem() throws IOException {
         Stage stage = (Stage) tableView.getScene().getWindow();
         stage.close();
@@ -115,6 +120,7 @@ public class OrderStatusController extends OrderMenuAbstractController implement
         LoadFXML load = new LoadFXML("checkOrderNumber");
     }
 
+    @Override
     public void handleLogoutMenuItem() throws IOException {
         Stage stage = (Stage) tableView.getScene().getWindow();
         stage.close();
