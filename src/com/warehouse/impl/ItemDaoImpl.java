@@ -8,12 +8,7 @@ package com.warehouse.impl;
 import com.warehouse.dao.ItemDao;
 import com.warehouse.entity.Item;
 import com.warehouse.service.ItemService;
-import com.warehouse.utility.HibernateUtil;
-import org.hibernate.HibernateException;
-import org.hibernate.Query;
-import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
 
 /**
  *

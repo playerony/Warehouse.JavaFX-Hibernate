@@ -5,7 +5,7 @@
  */
 package com.warehouse.service;
 
-import com.warehouse.entity.Item;
+import com.warehouse.entity.Order;
 import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -14,10 +14,10 @@ import org.hibernate.SessionFactory;
  *
  * @author pawel_000
  */
-public class ItemService {
-    public static List<Item> list(SessionFactory sessionFactory) {
+public class OrderService {
+    public static List<Order> list(SessionFactory sessionFactory) {
         Session session = sessionFactory.openSession();
-        List<Item> list = session.createQuery("from Item").list();
+        List<Order> list = session.createQuery("from Order").list();
         session.close();
         
         return list;
