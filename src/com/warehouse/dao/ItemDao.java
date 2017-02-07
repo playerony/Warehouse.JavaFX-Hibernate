@@ -6,10 +6,6 @@
 package com.warehouse.dao;
 
 import com.warehouse.entity.Item;
-import com.warehouse.utility.HibernateUtil;
-import org.hibernate.HibernateException;
-import org.hibernate.Query;
-import org.hibernate.Session;
 
 /**
  *
