@@ -12,6 +12,7 @@ import com.warehouse.dao.OrderDao;
 import com.warehouse.entity.Order;
 import com.warehouse.entity.PalleteInfo;
 import com.warehouse.impl.ItemDaoImpl;
+import com.warehouse.impl.OrderDaoImpl;
 import com.warehouse.informations.OrderInformations;
 import com.warehouse.loader.LoadFXML;
 import com.warehouse.utility.Validate;
@@ -65,7 +66,7 @@ public class OrderStatusController extends OrderMenuAbstractController implement
     @Override
     public void initInstances() {
         itemDao = new ItemDaoImpl();
-        orderDao = new OrderDao();
+        orderDao = new OrderDaoImpl();
     }
     
     @Override

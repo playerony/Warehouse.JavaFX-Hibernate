@@ -7,6 +7,7 @@ package com.warehouse.controller;
 
 import com.warehouse.cookie.Cookie;
 import com.warehouse.dao.OrderDao;
+import com.warehouse.impl.OrderDaoImpl;
 import com.warehouse.loader.LoadFXML;
 import com.warehouse.utility.AlertBox;
 import java.io.IOException;
@@ -30,7 +31,7 @@ public class CheckOrderNumberController implements Initializable{
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         alertBox = new AlertBox();
-        orderDao = new OrderDao();
+        orderDao = new OrderDaoImpl();
     }
 
     public void handleButtonClick() throws IOException {

@@ -14,6 +14,7 @@ import com.itextpdf.text.Document;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfWriter;
 import com.warehouse.cookie.Cookie;
+import com.warehouse.impl.OrderDaoImpl;
 import java.io.OutputStream;
 import java.util.Date;
 
@@ -23,7 +24,7 @@ import java.util.Date;
  */
 public class OrderMenuAbstractController{
     protected AlertBox alertBox = new AlertBox();
-    protected OrderDao orderDao = new OrderDao();
+    protected OrderDao orderDao = new OrderDaoImpl();
     protected LoadFXML loadFXML = new LoadFXML();
     protected Cookie cookie = Cookie.getInstance();
 
