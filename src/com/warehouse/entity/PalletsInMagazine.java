@@ -5,12 +5,27 @@
  */
 package com.warehouse.entity;
 
+import java.io.Serializable;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  *
  * @author pawel_000
  */
-public class PalletsInMagazine {
+
+@Entity
+@Table(name="pallets_in_magazine")
+public class PalletsInMagazine implements Serializable {
+    
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private int id;
+    
     private String products;
     private String location;
     
