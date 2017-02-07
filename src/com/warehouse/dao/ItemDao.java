@@ -15,21 +15,6 @@ import org.hibernate.Session;
  *
  * @author pawel_000
  */
-public class ItemDao {
-    public Item getItemById(final int id){
-        try{
-            Session session = HibernateUtil.createSessionFactory().openSession();
-            session.beginTransaction();
-
-            String sql = " from Item i where i.id=:id";
-            Query query = session.createQuery(sql);
-            query.setParameter("id", id);
-
-            return (Item) query.list().get(0);
-        }catch(HibernateException e){
-            e.printStackTrace();
-        }
-        
-        return null;
-    }
+public interface ItemDao {
+    public Item getItemById(int id);
 }
