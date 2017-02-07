@@ -7,11 +7,11 @@ package com.warehouse.controller;
 
 import com.warehouse.abstractController.OrderMenuAbstractController;
 import com.warehouse.abstractController.OrderMenuInterface;
-import com.warehouse.cookie.Cookie;
 import com.warehouse.dao.ItemDao;
 import com.warehouse.dao.PickingDao;
 import com.warehouse.entity.PalleteInfo;
 import com.warehouse.entity.PalletsPicked;
+import com.warehouse.impl.ItemDaoImpl;
 import com.warehouse.informations.PickingInformations;
 import com.warehouse.loader.LoadFXML;
 import com.warehouse.utility.Validate;
@@ -35,6 +35,7 @@ import javafx.stage.Stage;
  * @author pawel_000
  */
 public class PickingMenuController extends OrderMenuAbstractController implements Initializable, OrderMenuInterface{
+    
     @FXML
     public TableView<PickingInformations> tableView;
     @FXML
@@ -61,7 +62,7 @@ public class PickingMenuController extends OrderMenuAbstractController implement
     
     @Override
     public void initInstances() {
-        itemDao = new ItemDao();
+        itemDao = new ItemDaoImpl();
         pickingDao = new PickingDao();
     }
     
