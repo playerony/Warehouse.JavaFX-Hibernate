@@ -1,6 +1,7 @@
 package com.warehouse.controller;
 
 import com.warehouse.dao.UserDao;
+import com.warehouse.impl.UserDaoImpl;
 import com.warehouse.loader.LoadFXML;
 import com.warehouse.utility.AlertBox;
 import java.io.IOException;
@@ -17,7 +18,7 @@ public class LoginPanelController {
     
     public LoginPanelController(){
         alertBox = new AlertBox();
-        userDao = new UserDao();
+        userDao = new UserDaoImpl();
     }
     
     public void handleButtonClick() throws IOException {
