@@ -12,6 +12,7 @@ import com.warehouse.dao.PackingDao;
 import com.warehouse.entity.PalleteInfo;
 import com.warehouse.entity.PalletsPacked;
 import com.warehouse.impl.ItemDaoImpl;
+import com.warehouse.impl.PackingDaoImpl;
 import com.warehouse.informations.PackingInformations;
 import com.warehouse.loader.LoadFXML;
 import com.warehouse.utility.Validate;
@@ -67,7 +68,7 @@ public class PackingMenuController extends OrderMenuAbstractController implement
     @Override
     public void initInstances() {
         itemDao = new ItemDaoImpl();
-        packingDao = new PackingDao();
+        packingDao = new PackingDaoImpl();
     }
 
     @Override
