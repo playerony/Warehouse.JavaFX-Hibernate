@@ -10,7 +10,7 @@ package com.warehouse.dao;
  * @author pawel_000
  */
 public interface UserDao {
-    public boolean find(String name, String password);
+    public String find(String name, String password);
     
     public String getUserNameById(int id);
 }

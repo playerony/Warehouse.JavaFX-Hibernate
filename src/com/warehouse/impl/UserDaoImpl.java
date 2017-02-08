@@ -9,7 +9,6 @@ import com.warehouse.dao.UserDao;
 import com.warehouse.entity.User;
 import com.warehouse.service.UserService;
 import java.util.List;
-import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
 /**
@@ -24,14 +23,20 @@ public class UserDaoImpl implements UserDao{
     }
     
     @Override
-    public boolean find(String name, String password) {
-        List<User> list = UserService.list(sessionFactory);
+    public String find(String name, String password) {
+        List<User> list = null;
+        
+        try{
+            list = UserService.list(sessionFactory);
+        }catch(Exception e){
+            return "connection";
+        }
         
         for(User u : list)
-            if(u.getLogin().contains(name) && u.getPassword().contains(password))
-                return true;
+            if(u.getLogin().equals(name) && u.getPassword().equals(password))
+                return "success";
         
-        return false;
+        return "input";
     }
     
     @Override
