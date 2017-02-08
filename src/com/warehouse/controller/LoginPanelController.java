@@ -22,23 +22,12 @@ public class LoginPanelController {
     }
     
     public void handleButtonClick() throws IOException {
-        String output = userDao.find(loginField.getText(), passwordField.getText());
-        
-        switch(output){
-            case "success":
-                Stage stage = (Stage) loginField.getScene().getWindow();
-                stage.close();
+        if(userDao.find(loginField.getText(), passwordField.getText())){
+            Stage stage = (Stage) loginField.getScene().getWindow();
+            stage.close();
 
-                loadFXML = new LoadFXML("checkOrderNumber");
-                break;
-                
-            case "connection":
-                alertBox.display(getClass().getSimpleName(), "Connection problem. XAMPP is probably disable.");
-                break;
-                
-            default:
-                alertBox.display(getClass().getSimpleName(), "Wrong login or password");
-                break;
-        }
+            loadFXML = new LoadFXML("checkOrderNumber");
+        }else
+            alertBox.display(getClass().getSimpleName(), "Wrong login or password");
     }
 }

@@ -23,20 +23,15 @@ public class UserDaoImpl implements UserDao{
     }
     
     @Override
-    public String find(String name, String password) {
-        List<User> list = null;
+    public boolean find(String name, String password) {
         
-        try{
-            list = UserService.list(sessionFactory);
-        }catch(Exception e){
-            return "connection";
-        }
+        List<User> list = UserService.list(sessionFactory);
         
         for(User u : list)
             if(u.getLogin().equals(name) && u.getPassword().equals(password))
-                return "success";
+                return true;
         
-        return "input";
+        return false;
     }
     
     @Override

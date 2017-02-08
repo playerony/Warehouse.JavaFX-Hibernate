@@ -15,7 +15,7 @@ import org.hibernate.SessionFactory;
  * @author pawel_000
  */
 public class PackingService {
-    public static List<PalletsPacked> list(SessionFactory sessionFactory) throws Exception{
+    public static List<PalletsPacked> list(SessionFactory sessionFactory){
         Session session = sessionFactory.openSession();
         List<PalletsPacked> list = session.createQuery("from PalletsPacked").list();
         session.close();

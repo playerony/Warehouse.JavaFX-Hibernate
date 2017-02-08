@@ -5,7 +5,6 @@
  */
 package com.warehouse.service;
 
-import com.warehouse.entity.Item;
 import com.warehouse.entity.User;
 import java.util.List;
 import org.hibernate.Session;
@@ -16,7 +15,7 @@ import org.hibernate.SessionFactory;
  * @author pawel_000
  */
 public class UserService {
-    public static List<User> list(SessionFactory sessionFactory) throws Exception {
+    public static List<User> list(SessionFactory sessionFactory){
         Session session = sessionFactory.openSession();
         List<User> list = session.createQuery("from User").list();
         session.close();
