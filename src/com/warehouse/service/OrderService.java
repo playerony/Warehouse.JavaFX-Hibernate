@@ -15,7 +15,7 @@ import org.hibernate.SessionFactory;
  * @author pawel_000
  */
 public class OrderService {
-    public static List<Order> list(SessionFactory sessionFactory) {
+    public static List<Order> list(SessionFactory sessionFactory) throws Exception {
         Session session = sessionFactory.openSession();
         List<Order> list = session.createQuery("from Order").list();
         session.close();

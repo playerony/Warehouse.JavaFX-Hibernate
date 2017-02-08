@@ -5,7 +5,6 @@
  */
 package com.warehouse.service;
 
-import com.warehouse.entity.Item;
 import com.warehouse.entity.PalletsPacked;
 import java.util.List;
 import org.hibernate.Session;
@@ -16,7 +15,7 @@ import org.hibernate.SessionFactory;
  * @author pawel_000
  */
 public class PackingService {
-    public static List<PalletsPacked> list(SessionFactory sessionFactory) {
+    public static List<PalletsPacked> list(SessionFactory sessionFactory) throws Exception{
         Session session = sessionFactory.openSession();
         List<PalletsPacked> list = session.createQuery("from PalletsPacked").list();
         session.close();
