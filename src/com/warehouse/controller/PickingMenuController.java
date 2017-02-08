@@ -12,6 +12,7 @@ import com.warehouse.dao.PickingDao;
 import com.warehouse.entity.PalleteInfo;
 import com.warehouse.entity.PalletsPicked;
 import com.warehouse.impl.ItemDaoImpl;
+import com.warehouse.impl.PickingDaoImpl;
 import com.warehouse.informations.PickingInformations;
 import com.warehouse.loader.LoadFXML;
 import com.warehouse.utility.Validate;
@@ -63,7 +64,7 @@ public class PickingMenuController extends OrderMenuAbstractController implement
     @Override
     public void initInstances() {
         itemDao = new ItemDaoImpl();
-        pickingDao = new PickingDao();
+        pickingDao = new PickingDaoImpl();
     }
     
     @Override
@@ -83,7 +84,7 @@ public class PickingMenuController extends OrderMenuAbstractController implement
         ObservableList<PickingInformations> result = FXCollections.observableArrayList();
 
         try {
-            List<PalletsPicked>palletsPicked = pickingDao.getPackedPallets();
+            List<PalletsPicked>palletsPicked = pickingDao.getPickedPallets();
             
             for (PalletsPicked p : palletsPicked) {
                 List<PalleteInfo>palleteInfo = Validate.getPalleteInformations(p.getProducts());
